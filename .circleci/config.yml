@@ -4,9 +4,7 @@ orbs:
 
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.6.3-stretch-node
-    executor: default
+    executor: ruby_2_6_3
     environment:
       TODOMVC_TEST_APP_URL: 'http://todomvc.com/examples/react/'
     steps:
@@ -18,3 +16,8 @@ jobs:
       - run:
           name: Run test
           command: bundle exec cucumber
+
+executors:
+  ruby_2_6_3:
+    docker:
+      - image: circleci/ruby:2.6.3-stretch-node
