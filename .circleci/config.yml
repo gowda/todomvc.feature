@@ -15,6 +15,6 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
-      - run
+      - run:
           name: Run test
           command: bundle exec cucumber
