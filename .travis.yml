@@ -8,7 +8,7 @@ before_install:
   - gem install bundler
 before_script:
   - wget https://chromedriver.storage.googleapis.com/81.0.4044.20/chromedriver_linux64.zip
-  - unzip chromdriver_linux64.zip
+  - unzip chromedriver_linux64.zip
   - export PATH="$PATH:$HOME/chromedriver_linux64"
 script: bundle exec cucumber
 env:
