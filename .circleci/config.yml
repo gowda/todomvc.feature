@@ -1,0 +1,33 @@
+version: 2.1
+orbs:
+  ruby: circleci/ruby@0.1.2
+
+jobs:
+  build:
+    executor: ruby_2_6_3
+    environment:
+      TODOMVC_TEST_APP_URL: 'http://todomvc.com/examples/react/'
+    steps:
+      - checkout
+      - run:
+          name: Update bundler
+          command: |
+            gem update --system
+            gem uninstall bundler
+            rm /usr/local/bin/bundler
+            rm /usr/local/bin/bundler
+            gem install bundler
+      - run:
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
+      - run:
+          name: Run test
+          command: bundle exec cucumber
+
+executors:
+  ruby_2_6_3:
+    docker:
+      - image: circleci/ruby:2.6.3-browsers
+        environment:
+          BUNDLER_VERSION: '2.0.2'
