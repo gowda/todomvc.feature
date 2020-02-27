@@ -1,0 +1,13 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.6
+addons:
+  chrome: stable
+before_install:
+  - ./scripts/install-chromedriver.sh
+  - gem install bundler
+script: bundle exec cucumber
+env:
+  - TODOMVC_TEST_APP_URL='http://todomvc.com/examples/react/'
+  - TODOMVC_TEST_APP_URL='http://todomvc.com/examples/vanillajs/'
