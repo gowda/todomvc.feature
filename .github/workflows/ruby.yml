@@ -4,9 +4,10 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        test_app_url: ['http://todomvc.com/examples/react/', 'http://todomvc.com/examples/react/']
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby 2.6
@@ -19,4 +20,4 @@ jobs:
         bundle install --jobs 4 --retry 3
         bundle exec cucumber
       env:
-        TODOMVC_TEST_APP_URL: 'http://todomvc.com/examples/react/'
+        TODOMVC_TEST_APP_URL: ${{ matrix.test_app_url }}
