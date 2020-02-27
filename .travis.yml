@@ -5,11 +5,10 @@ rvm:
 addons:
   chrome: stable
 before_install:
-  - gem install bundler
-before_script:
   - wget https://chromedriver.storage.googleapis.com/81.0.4044.20/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - export PATH="$PATH:$HOME/chromedriver_linux64"
+  - gem install bundler
 script: bundle exec cucumber
 env:
   - TODOMVC_TEST_APP_URL='http://todomvc.com/examples/react/'
