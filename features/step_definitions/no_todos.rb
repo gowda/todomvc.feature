@@ -20,5 +20,5 @@ Then("I should not see the footer") do
 end
 
 Then("I should not see mark all as complete button") do
-  expect(page).not_to have_selector('input#toggle-all', visible: false)
+  expect(page).not_to have_selector('input#toggle-all', visible: true)
 end
