@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        test_app_url: ['http://todomvc.com/examples/react/', 'http://todomvc.com/examples/react/']
+        test_app_url: ['http://todomvc.com/examples/react/', 'http://todomvc.com/examples/vanillajs/']
     steps:
     - uses: actions/checkout@v2
     - name: Set up Ruby 2.6
