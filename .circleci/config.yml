@@ -17,4 +17,4 @@ jobs:
       - ruby/bundle-install
       - run
           name: Run test
-	  command: bundle exec cucumber
+          command: bundle exec cucumber
