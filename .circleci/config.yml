@@ -28,6 +28,6 @@ jobs:
 executors:
   ruby_2_6_3:
     docker:
-      - image: circleci/ruby:2.6.3-stretch-node
+      - image: circleci/ruby:2.6.3-browsers
         environment:
           BUNDLER_VERSION: '2.0.2'
