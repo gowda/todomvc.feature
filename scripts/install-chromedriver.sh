@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+function __config {
+  CHROMEDRIVER_BASE_URL="https://chromedriver.storage.googleapis.com"
+}
+
 function __chrome_stable_version {
   google-chrome-stable --version | \
     cut -d' ' -f3 | \
@@ -7,14 +11,14 @@ function __chrome_stable_version {
 }
 
 function __chromedriver_version {
-  curl --stderr /dev/null \
-       "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$1";
+  curl --stderr /dev/null "${CHROMEDRIVER_BASE_URL}/LATEST_RELEASE_$1";
 }
 
 function __init {
-  set -x
+  set -x;
+  __config;
   VERSION=$(__chromedriver_version $(__chrome_stable_version))
-  CHROMEDRIVER_URL="https://chromedriver.storage.googleapis.com/$VERSION/chromedriver_linux64.zip";
+  CHROMEDRIVER_URL="${CHROMEDRIVER_BASE_URL}/${VERSION}/chromedriver_linux64.zip";
 }
 
 function main {
