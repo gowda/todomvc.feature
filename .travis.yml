@@ -1,0 +1,9 @@
+language: ruby
+rvm:
+  - 2.6
+before_install:
+  - gem install bundler
+script: bundle exec cucumber
+env:
+  - TODOMVC_TEST_APP_URL='http://todomvc.com/examples/react/'
+  - TODOMVC_TEST_APP_URL='http://todomvc.com/examples/vanillajs/'
