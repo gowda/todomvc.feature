@@ -2,11 +2,14 @@
 
 source "https://rubygems.org"
 
-gem 'pry', groups: [:development, :test]
+group :test do
+  gem 'cucumber'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'rspec'
+end
 
-gem 'cucumber', group: :test
-gem 'capybara', group: :test
-gem 'selenium-webdriver', group: :test
-gem 'rspec', group: :test
-
-gem 'dotenv', groups: [:development, :test]
+group :test, :development do
+  gem 'pry'
+  gem 'dotenv'
+end
