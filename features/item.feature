@@ -8,7 +8,7 @@ Scenario: Marking as complete
   Given I am working on first item in the list
   When I click on mark as complete item
   Then I should see item marked as complete
-  And I should be able to inspect parent 'li' tag to have class "completed"
+  And I should be able to inspect parent to have class "completed"
 
 Scenario: Double clicking on the list item
   Given I am working on first item in the list
