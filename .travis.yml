@@ -7,6 +7,8 @@ addons:
 before_install:
   - ./scripts/install-chromedriver.sh
   - gem install bundler
+before_script:
+  - bundle exec rubocop
 script: bundle exec cucumber
 env:
   - TODOMVC_TEST_APP_URL='http://todomvc.com/examples/react/'

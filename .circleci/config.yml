@@ -22,7 +22,10 @@ jobs:
           command: bundle -v
       - ruby/bundle-install
       - run:
-          name: Run test
+          name: Check code style
+	  command: bundle exec rubocop
+      - run:
+          name: Run tests
           command: bundle exec cucumber
 
 executors:

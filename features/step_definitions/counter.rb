@@ -1,3 +1,5 @@
-Then "I see the count as {string}" do |string|
+# frozen_string_literal: true
+
+Then 'I see the count as {string}' do |string|
   expect(page).to have_selector('span.todo-count', text: string)
 end
