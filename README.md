@@ -3,4 +3,6 @@
 ![](https://github.com/gowda/todomvc.feature/workflows/Features/badge.svg)
 [![Build Status](https://travis-ci.com/gowda/todomvc.feature.svg?branch=master)](https://travis-ci.com/gowda/todomvc.feature)
 
+![](https://github.com/gowda/todomvc.feature/workflows/CodeQL/badge.svg)
+
 Cucumber-based implementation of [TodoMVC application spec](https://github.com/tastejs/todomvc/blob/master/app-spec.md#functionality)
