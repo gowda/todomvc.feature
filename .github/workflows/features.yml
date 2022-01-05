@@ -1,6 +1,19 @@
 name: Features
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - README.md
+      - .circleci
+      - .travis.yml
+  pull_request:
+    paths-ignore:
+      - README.md
+      - .circleci
+      - .travis.yml
+
 
 jobs:
   build:
